@@ -1,42 +1,27 @@
 {
-  "name": "simple-express-handlebars-boilerplate",
-  "version": "1.0.0",
-  "description": "A minimal ExpressJS server boilerplate using Handlebars view engine.",
-  "main": "server.js",
+  "name": "express-handlebars-starter-app",
+  "version": "0.2.6",
+  "description": "Node, Express, Handlebars starter app, based on Getting Started with Node on Heroku.",
+  "engines": {
+    "node": "6.11.1"
+  },
+  "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js"
   },
-  "keywords": [
-    "express",
-    "expressjs",
-    "server",
-    "node",
-    "nodejs",
-    "handlebars",
-    "boilerplate",
-    "template",
-    "templates",
-    "webserver",
-    "css"
-  ],
-  "readmeFilename": "README.md",
-  "author": {
-    "name": "Wethrift",
-    "email": "hello@wethrift.com",
-    "url": "https://www.wethrift.com"
-  },
-  "license": "MIT",
   "dependencies": {
-    "express": "^4.16.3",
-    "express-handlebars": "^3.0.0"
+    "express": "4.15.2",
+    "express-handlebars": "3.0.0",
+    "request": "2.81.0"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:teamwethrift/simple-express-handlebars-boilerplate.git"
+    "url": "https://github.com/heroku/node-js-getting-started"
   },
-  "bugs": {
-    "url": "https://github.com/teamwethrift/simple-express-handlebars-boilerplate/issues"
-  },
-  "homepage": "https://wethrift.github.io"
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "license": "MIT"
 }

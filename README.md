@@ -1,31 +1,39 @@
-# simple-express-handlebars-boilerplate
-A minimal, web server boilerplate in NodeJS using [ExpressJS](https://expressjs.com/) and [express-handlebars](https://github.com/ericf/express-handlebars).
+# express-handlebars-starter-app
 
-- Serve static files from `/public`
-- Use vanilla CSS `public/styles/styles.css`
-- Simple `.handlebars` templates and partials from `/views` and `/views/partials`
-- Create custom helpers in `helpers.js`
+Node, Express, Handlebars starter app adapted from [Getting Started with Node on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs).
 
-## No build required
-1. Install Node/NPM
-2. Clone this repository
-3. Install packages - `npm install`
-4. Start the server - `npm start`
+Live Demo on Heroku: [https://melanie-node-js.herokuapp.com/](https://melanie-node-js.herokuapp.com/)
 
-When running locally, the server will start on `http://localhost:3000/`
+## Running Locally
 
-## Example deployments
-We've used this boilerplate as the starting point for components of [Wethrift](https://www.wethrift.com) and [Searchmy.bio](https://www.searchmy.bio).
+Make sure you have [Node.js](http://nodejs.org/) and the [Heroku CLI](https://cli.heroku.com/) installed.
 
-## Deploy to Heroku
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/teamwethrift/simple-express-handlebars-boilerplate)
+```sh
+$ git clone git@github.com:heroku/node-js-getting-started.git # or clone your own fork
+$ cd node-js-getting-started
+$ npm install
+$ npm start
+```
 
-Deploy [simple-express-handlebars-boilerplate](https://elements.heroku.com/buttons/teamwethrift/simple-express-handlebars-boilerplate) to Heroku with one click from the Heroku Elements Marketplace.
+Your app should now be running on [localhost:5000](http://localhost:5000/).
 
-Alternatively, install the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli), clone this repo and [create a new app](https://devcenter.heroku.com/articles/creating-apps).
+## Deploying to Heroku
 
-## More from Wethrift
-- [Wethrift development resources and links](http://wethrift.github.io)
-- [Wethrift Atom snippets](https://atom.io/packages/wethrift-snippets)
-- [Wethrift on Codepen](https://codepen.io/wethrift/)
-- [Wethrift on NPM](https://www.npmjs.com/~teamwethrift)
+```
+$ heroku create
+$ git push heroku master
+$ heroku open
+```
+or
+
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy)
+
+## Documentation
+
+For more information about using Node.js on Heroku, see these Dev Center articles:
+
+- [Getting Started with Node.js on Heroku](https://devcenter.heroku.com/articles/getting-started-with-nodejs)
+- [Heroku Node.js Support](https://devcenter.heroku.com/articles/nodejs-support)
+- [Node.js on Heroku](https://devcenter.heroku.com/categories/nodejs)
+- [Best Practices for Node.js Development](https://devcenter.heroku.com/articles/node-best-practices)
+- [Using WebSockets on Heroku with Node.js](https://devcenter.heroku.com/articles/node-websockets)
