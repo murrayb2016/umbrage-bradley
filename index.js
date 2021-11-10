@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
-app.use('/',peopleRouter);
+app.use(peopleRouter);
 
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
