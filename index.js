@@ -3,9 +3,10 @@ var express = require('express');
 // require Handlebars templating engine for Express
 var exphbs  = require('express-handlebars');
 
+var app = express();
+
 var peopleRouter = require('./routers/people');
 
-var app = express();
 
 app.set('port', (process.env.PORT || 5000));
 

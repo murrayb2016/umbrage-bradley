@@ -5,10 +5,8 @@ var router = express.Router();
 // require 'request' module that allows to make external HTTP requests
 var request = require('request');
 
-var app = express();
-
 // define the app routes
-app.get('/', function(req, res) {
+router.get('/', function(req, res) {
 
 	// request the data from third party API
 	request(
