@@ -7,7 +7,7 @@ var request = require('request');
 
 // define the app routes
 router.get('/', function(req, res) {
-
+	res.render('pages/home');
 });
 
 module.exports = router; 
