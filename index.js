@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
-app.use(peopleRouter);
+app.use('/',peopleRouter);
 
 // make a 404 error page
 app.use(function (req, res) {
