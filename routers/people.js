@@ -8,7 +8,12 @@ var request = require('request');
 // define the app routes
 router.get('/', function(req, res) {
 
-	// request the data from third party API
+});
+
+module.exports = router; 
+
+/*
+// request the data from third party API
 	request(
     { 
     	method: 'GET',
@@ -25,6 +30,4 @@ router.get('/', function(req, res) {
     	}
     }
   );
-});
-
-module.exports = router; 
+*/
