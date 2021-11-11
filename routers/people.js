@@ -16,10 +16,15 @@ router.get('/login', function(req, res) {
 });
 
 router.post('/login', async function(req, res) {
+	try {
 	console.log(req.body)
 	let token = await loginPost();
 	console.log(token)
 	res.render('pages/home');
+	} catch (error) {
+		console(error)
+		res.render('pages/error')
+	}
 });
 
 module.exports = router; 
