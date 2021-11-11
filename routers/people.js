@@ -4,7 +4,6 @@ const router = express.Router();
 
 // require 'request' module that allows to make external HTTP requests
 const request = require('request');
-const bodyParser = require("body-parser");
 
 // define the app routes
 
