@@ -2,7 +2,7 @@
 const request =  require('superagent');
 
 async function login(){
-    return await request.get('https://umbrage-interview-api.herokuapp.com/login').set({username: req.body.email, password: req.body.password});
+    return 1;
 }
 
 module.exports = {
