@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-// require 'request' module that allows to make external HTTP requests
+import login from '../services/api'
 
 // define the app routes
 
@@ -15,8 +15,9 @@ router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', (req, res) => {
 	console.log(req.body)
+	login();
 	res.render('pages/home');
 });
 
