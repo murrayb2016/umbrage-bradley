@@ -2,7 +2,7 @@
 const express = require('express');
 const router = express.Router();
 
-import login from '../services/api'
+import {login} from '../services/api'
 
 // define the app routes
 
