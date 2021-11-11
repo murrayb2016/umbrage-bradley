@@ -3,7 +3,7 @@
   "version": "0.2.6",
   "description": "Node, Express, Handlebars starter app, based on Getting Started with Node on Heroku.",
   "engines": {
-    "node": "6.11.1"
+    "node": "^6.13.0"
   },
   "main": "index.js",
   "scripts": {
