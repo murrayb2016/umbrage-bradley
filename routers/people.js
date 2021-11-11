@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // require 'request' module that allows to make external HTTP requests
-// const request = require('superagent');
+const request = require('superagent');
 
 // define the app routes
 
