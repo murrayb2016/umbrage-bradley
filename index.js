@@ -6,8 +6,6 @@ const exphbs  = require('express-handlebars');
 const app = express();
 
 const bodyParser = require("body-parser");
-const peopleRouter = require('./routers/people');
-
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -26,6 +24,7 @@ app.use(express.static(__dirname + '/public'));
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
+const peopleRouter = require('./routers/people');
 app.use(peopleRouter);
 
 app.listen(app.get('port'), function() {
