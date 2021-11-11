@@ -16,7 +16,7 @@ router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
 
-router.post('/login', async function(req, res) {
+router.post('/login', async (req, res) => {
 	console.log(req.body)
 	let token = await request.get('https://umbrage-interview-api.herokuapp.com/login').query({username: req.body.email, password: req.body.password});
 	console.log(token)
