@@ -3,7 +3,7 @@ const express = require('express');
 const router = express.Router();
 
 // require 'request' module that allows to make external HTTP requests
-const request = require('superagent');
+// const request = require('superagent');
 
 // define the app routes
 
@@ -18,8 +18,8 @@ router.get('/login', function(req, res) {
 
 router.post('/login', function(req, res) {
 	console.log(req.body)
-	let token = await request.get('https://umbrage-interview-api.herokuapp.com/login').send({"username": req.body.username, "password": req.body.password});
-	console.log(token)
+	// let token = await request.get('https://umbrage-interview-api.herokuapp.com/login').send({"username": req.body.username, "password": req.body.password});
+	// console.log(token)
 	res.render('pages/home');
 });
 
