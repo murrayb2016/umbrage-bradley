@@ -15,7 +15,7 @@ router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
 
-router.post('/login', async (req, res) => {
+router.post('/login', (req, res) => {
 	console.log(req.body)
 	res.render('pages/home');
 });
