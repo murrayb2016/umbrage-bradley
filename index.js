@@ -1,11 +1,12 @@
 // require Express application framework
-var express = require('express');
+const express = require('express');
 // require Handlebars templating engine for Express
-var exphbs  = require('express-handlebars');
+const exphbs  = require('express-handlebars');
 
-var app = express();
+const app = express();
 
 const bodyParser = require("body-parser");
+const peopleRouter = require('./routers/people');
 
 
 app.use(bodyParser.urlencoded({
@@ -16,9 +17,6 @@ app.use(bodyParser.urlencoded({
 * Parses the text as JSON and exposes the resulting object on req.body.
 */
 app.use(bodyParser.json());
-
-var peopleRouter = require('./routers/people');
-
 
 app.set('port', (process.env.PORT || 5000));
 
