@@ -16,9 +16,9 @@ router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
 
-router.post('/login', async function(req, res) {
+router.post('/login', function(req, res) {
 	console.log(req.body)
-	let token = await request.get('https://umbrage-interview-api.herokuapp.com/login').send({"username": req.body.username, "password": req.body.password});
+	let token = request.get('https://umbrage-interview-api.herokuapp.com/login').send({"username": req.body.username, "password": req.body.password});
 	// console.log(token)
 	res.render('pages/home');
 });
