@@ -10,11 +10,11 @@ const ls = require('local-storage');
 
 //Homepage for list of people
 router.get('/', function(req, res) {
+	console.log(ls.get('authToken')); 
 	res.render('pages/home');
 });
 
 router.get('/login', function(req, res) {
-	console.log(ls.get('authToken')); 
 	res.render('pages/login');
 });
 
