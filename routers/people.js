@@ -23,7 +23,7 @@ router.post('/login', (req, res) => {
 	.post('https://umbrage-interview-api.herokuapp.com/login')
 	.send({ username: req.body.email, password: req.body.password }) // sends a JSON post body
 	.set('accept', 'json')
-	.end((err, res) => {
+	.end((err, res) => { 
 	  // Calling the end function will send the request
 	  let response = JSON.parse(res); 
 	  let token = response.text['access_token']; 
