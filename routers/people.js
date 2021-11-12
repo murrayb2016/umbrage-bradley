@@ -25,8 +25,8 @@ router.post('/login', (req, res) => {
 	.set('accept', 'json')
 	.end((err, res) => { 
 	  // Calling the end function will send the request
-	  let r = JSON.parse(res); 
-	  console.log(r)
+	  let r = res; 
+	  console.log(r.text)
 	  console.log(token)
 	});
 	   res.render('pages/home'); 
