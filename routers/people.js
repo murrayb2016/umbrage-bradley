@@ -4,13 +4,13 @@ const router = express.Router();
 
 const superagent = require('superagent');
 
-const ls = require('local-storage');
+require('dotenv').config()
 
 // define the app routes
 
 //Homepage for list of people
 router.get('/', function(req, res) {
-	console.log(ls.get('authToken')); 
+	console.log(process.env.token)
 	res.render('pages/home');
 });
 
@@ -28,7 +28,7 @@ router.post('/login', (req, res) => {
 	  // Calling the end function will send the request
 	  let resp = res.text;
 	  let token = JSON.parse(resp).access_token;
-	  ls.set('authToken', token);
+	  process.env['token'] = token; 
 	  console.log(err)
 	});
 	   res.render('pages/home'); 
