@@ -29,7 +29,7 @@ router.post('/login', (req, res) => {
 	  let token = response.text['access_token']; 
 	  console.log(token)
 	});
-	   res.render('pages/home');
+	   res.render('pages/home'); 
 });
 
 module.exports = router; 
