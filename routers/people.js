@@ -14,6 +14,7 @@ router.get('/', function(req, res) {
 });
 
 router.get('/login', function(req, res) {
+	console.log(ls.get('authToken')); 
 	res.render('pages/login');
 });
 
@@ -27,7 +28,9 @@ router.post('/login', (req, res) => {
 	  // Calling the end function will send the request
 	  let resp = res.text;
 	  let token = JSON.parse(resp).access_token;
-	  console.log(token)
+	  ls.set('authToken', token);
+	  console.log(err)
+	  res.render('pages/error');
 	});
 	   res.render('pages/home'); 
 });
