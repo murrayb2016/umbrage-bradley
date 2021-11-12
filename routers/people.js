@@ -30,7 +30,6 @@ router.post('/login', (req, res) => {
 	  let token = JSON.parse(resp).access_token;
 	  ls.set('authToken', token);
 	  console.log(err)
-	  res.render('pages/error');
 	});
 	   res.render('pages/home'); 
 });
