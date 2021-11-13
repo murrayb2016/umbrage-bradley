@@ -30,7 +30,7 @@ router.post('/login', (req, res) => {
 	  let resp = res.text;
 	  let token = JSON.parse(resp).access_token;
 	  var date = new Date();
-	  res.cookie('token', token, {expire: date.addDays(1)}); 
+	  res.cookie('token', token, {expire: date.getDate() + 1}); 
 	  console.log(err)
 	});
 	   res.render('pages/home');  
