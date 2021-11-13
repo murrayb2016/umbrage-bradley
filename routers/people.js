@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
 	  localStorage.setItem('token', token);
 	  console.log(err)
 	});
-	   res.render('pages/home'); 
+	   res.render('pages/home');  
 });
 
 module.exports = router; 
