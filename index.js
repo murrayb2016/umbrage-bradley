@@ -5,6 +5,9 @@ const exphbs  = require('express-handlebars');
 
 const app = express();
 
+var cookieParser = require('cookie-parser');
+app.use(cookieParser());
+
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({
