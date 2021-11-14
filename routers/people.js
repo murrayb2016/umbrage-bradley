@@ -24,10 +24,11 @@ router.get('/login', function(req, res) {
 router.post('/login', (req, res) => {
 	// console.log(req.body)
 	session=req.session;
-	console.log('hit'+req.data)
+	console.log('hit'+JSON.stringify(req.data))
+	console.log('hit'+JSON.stringify(req.body))
 	superagent
 	.post('https://umbrage-interview-api.herokuapp.com/login')
-	.send({ username: req.data.email, password: req.data.password }) // sends a JSON post body
+	.send({ username: req.body.email, password: req.body.password }) // sends a JSON post body
 	.set('accept', 'json')
 	.end((err, res) => { 
 	  // Calling the end function will send the request
