@@ -10,9 +10,11 @@ var cookieParser = require('cookie-parser');
 
 const app = express();
 
+let secretySecret = process.env.SECRET; 
+console.log(secretySecret)
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(sessions({
-    secret: 'test',
+    secret: secretySecret,
     saveUninitialized:true,
     cookie: { maxAge: oneDay },
     resave: false 
