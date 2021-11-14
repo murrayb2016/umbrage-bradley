@@ -23,7 +23,7 @@ app.use(sessions({
 //serving public file
 app.use(express.static(__dirname));
 
-app.use(express.cookieParser());
+app.use(cookieParser());
 
 const bodyParser = require("body-parser");
 
