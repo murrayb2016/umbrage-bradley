@@ -45,7 +45,7 @@ router.get('/view/:id', function(req, res) {
 	  comments = person.comments; 
 	  console.log(comments); 
 	  console.log(err)
-	  res.render('pages/deaitls', {person,comments});
+	  res.render('pages/details', {person,comments});
 	});
 	}
 	else{
