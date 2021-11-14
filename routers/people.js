@@ -78,7 +78,7 @@ router.post('/people', function(req, res) {
 	let token = req.cookies['token'];
 	if(token){
 		superagent
-	.post('https://umbrage-interview-api.herokuapp.com/person')
+	.post('https://umbrage-interview-api.herokuapp.com/people')
 	.send({ first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, job_title: req.body.job_title}) // sends a JSON post body
 	.set('accept', 'json')
 	.end((err, data) => {   
