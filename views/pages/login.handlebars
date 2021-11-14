@@ -5,7 +5,7 @@
 <div class="container app-main">
   <div class="card">
     <div class="card-body">
-<form method="post" action="/login">
+<form method="post">
   <div class="form-group">
     <label for="email">Email address<span style="color: red;">*</span></label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
@@ -15,8 +15,38 @@
     <label for="password">Password<span style="color: red;">*</span></label>
     <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="button" class="btn btn-primary" onclick="login()">Submit</button>
 </form>
 </div>
 </div>
 </div>
+
+<script>
+  
+  $(function() {
+    
+  });
+
+  function login(){// pass your data in method
+      let email = $('#email').val();
+      let password = $('password').val(); 
+      let loginObj = {email, password};
+     $.ajax({
+             type: "POST",
+             url: "https://umbrage-interview-api.herokuapp.com/login",
+             data: JSON.stringify(loginObj),// now data come in this function
+             contentType: "application/json; charset=utf-8",
+             crossDomain: true,
+             dataType: "json",
+             success: function (data, status, jqXHR) {
+               window.location.href = "https://umbrage-interview-api.herokuapp.com/";
+             },
+
+             error: function (jqXHR, status) {
+                 // error handler
+                 console.log(jqXHR);
+                 alert('fail' + status.code);
+             }
+          });
+    }
+</script>

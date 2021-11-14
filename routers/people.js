@@ -24,6 +24,7 @@ router.get('/login', function(req, res) {
 router.post('/login', (req, res) => {
 	// console.log(req.body)
 	session=req.session;
+	console.log(req.logicObj)
 	superagent
 	.post('https://umbrage-interview-api.herokuapp.com/login')
 	.send({ username: req.body.email, password: req.body.password }) // sends a JSON post body
@@ -35,7 +36,7 @@ router.post('/login', (req, res) => {
 	  session.token=token;
 	  console.log(err)
 	});
-	   res.redirect('/')
+	   res.render('pages/home');  
 });
 
 module.exports = router; 
