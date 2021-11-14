@@ -64,6 +64,8 @@
         <input type="email" class="form-control email" id="email" name="email" required /><br/>
         <label>Job Title:<span style="color: red;">*</span></label>
         <input type="text" class="form-control job_title" id="job_title" name="job_title" required /><br/>
+        <label>Avatar:<span style="color: red;">*</span></label>
+        <input type="text" class="form-control avatar" id="avatar" name="avatar" /><br/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -86,12 +88,14 @@
       let lastName = $('#last_name').val(); 
       let email = $('#email').val(); 
       let jobTitle = $('#job_title').val(); 
+      let avatar = $('#avatar').val(); 
 
       let createObj = {
         first_name: firstName, 
         last_name: lastName, 
         email: email, 
-        job_title: jobTitle
+        job_title: jobTitle, 
+        avatar, avatar
       };
 
       console.log(JSON.stringify(createObj))
