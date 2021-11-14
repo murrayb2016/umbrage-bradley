@@ -15,13 +15,13 @@ router.get('/', function(req, res) {
 		superagent
 	.get('https://umbrage-interview-api.herokuapp.com/people')
 	.auth(token, { type: 'bearer' })
-	.end((err, res) => { 
+	.end((err, data) => { 
 	//   console.log(res.text.people)
-	  peoples = JSON.parse(res.text).people; 
+	  peoples = JSON.parse(data.text).people; 
 	  console.log(peoples); 
 	  console.log(err)
+	  res.render('pages/home', {peoples});
 	});
-	res.render('pages/home', {peoples});
 	}
 	else{
 		res.render('pages/login');
