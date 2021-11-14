@@ -29,7 +29,7 @@ router.get('/', function(req, res) {
 });
 
 //Homepage for list of people
-router.get('/people/:id', function(req, res) {
+router.get('/view/:id', function(req, res) {
 	// console.log(req.cookies['token'])
 	let token = req.cookies['token'];
 	let id = req.params.id;  
