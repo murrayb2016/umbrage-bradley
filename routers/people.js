@@ -35,7 +35,8 @@ router.post('/login', (req, res) => {
 	  // Calling the end function will send the request
 	  let resp = res.text;
 	  let token = JSON.parse(resp).access_token;
-	  session.token=token;
+	  const oneDay = 1000 * 60 * 60 * 24;
+	  res.cookie('token', token, { maxAge: oneDay, httpOnly: true });
 	  console.log(err)
 	});
 	   res.render('pages/home');  
