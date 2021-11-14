@@ -16,17 +16,16 @@
     </tr>
   </thead>
   <tbody>
-
-    <!--Add people repeater-->
+    {{#each peoples}}
     <tr>
       <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{avatar}}</td>
+      <td>{{first_name}}</td>
+      <td>{{last_name}}</td>
+      <td>{{email}}}</td>
+      <td>{{job_title}}</td>
     </tr>
-  
+    {{/each}}
   </tbody>
 </table>
 
