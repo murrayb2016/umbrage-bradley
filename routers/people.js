@@ -81,7 +81,7 @@ router.post('/people', function(req, res) {
 	.post('https://umbrage-interview-api.herokuapp.com/person')
 	.send({ first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, job_title: req.body.job_title}) // sends a JSON post body
 	.set('accept', 'json')
-	.end((err, res) => {   
+	.end((err, data) => {   
 	  console.log(err)
 	  res.render('pages/home');
 	});
