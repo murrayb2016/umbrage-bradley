@@ -30,8 +30,8 @@
   function login(){// pass your data in method
       let email = $('#email').val();
       let password = $('#password').val(); 
-      let loginObj = {"username" : email, 
-                     "password": password};
+      let loginObj = {username : email, 
+                     password: password};
 
      $.ajax({
              type: "POST",
