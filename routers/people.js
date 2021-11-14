@@ -11,14 +11,14 @@ router.get('/', function(req, res) {
 	session=req.session;
 	console.log(session)
 	if(session.token){
-		res.render('pages/home');
+		res.redirect('/')
     }else{
-		res.render('pages/login');
+		res.redirect('/login')
 	}
 });
 
 router.get('/login', function(req, res) {
-	res.render('pages/login');
+	res.redirect('/login')
 });
 
 router.post('/login', (req, res) => {
@@ -35,7 +35,7 @@ router.post('/login', (req, res) => {
 	  session.token=token;
 	  console.log(err)
 	});
-	   res.render('pages/home');  
+	   res.redirect('/')
 });
 
 module.exports = router; 
