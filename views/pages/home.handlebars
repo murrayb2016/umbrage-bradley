@@ -48,6 +48,7 @@
 
   function deleteItem(){// pass your data in method
      let id = $('#id').val();
+     alert(id)
      $.ajax({
              type: "DELETE",
              url: "https://umbrage-bradley.herokuapp.com/delete/"+id+"",
