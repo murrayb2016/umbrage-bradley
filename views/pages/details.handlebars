@@ -11,13 +11,14 @@
         &nbsp;
         {{/if}}
     <div class="panel-body">
-      <label>First Name: </label>{{person.first_name}}
-      <label>Last Name: </label>{{person.last_name}}
-      <label>Email: </label>{{person.email}}
-      <label>Job Title: </label>{{person.job_title}}
-      <label>Comments:</label>
+      <label>First Name: </label>{{person.first_name}}<br/>
+      <label>Last Name: </label>{{person.last_name}}<br/>
+      <label>Email: </label>{{person.email}}<br/>
+      <label>Job Title: </label>{{person.job_title}}<br/>
+      <label>Comments:</label><br/>
       {{#each comments}}
         {{comment}}
+        <hr/>
       {{/each}}
     </div>
   </div>
