@@ -17,11 +17,11 @@ router.get('/', function(req, res) {
 	.auth(token, { type: 'bearer' })
 	.end((err, res) => { 
 	//   console.log(res.text.people)
-	  peoples = JSON.parse(res.text.people); 
+	  peoples = res.text.people; 
 	  console.log(peoples); 
 	  console.log(err)
 	});
-	res.render('pages/home');
+	res.render('pages/home', {peoples});
 	}
 	else{
 		res.render('pages/login');
