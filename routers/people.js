@@ -8,10 +8,8 @@ const superagent = require('superagent');
 
 //Homepage for list of people
 router.get('/', function(req, res) {
-	session=req.session;
-	console.log(session)
 	console.log(req.cookies['token'])
-	if(session.token){
+	if(req.cookies['token']){
 		res.render('pages/home');
     }else{
 		res.render('pages/login');
