@@ -38,6 +38,7 @@
              url: "hhttps://umbrage-interview-api.herokuapp.com/login",
              data: JSON.stringify(loginObj),// now data come in this function
              contentType: "application/json",
+                         crossDomain: true,
              success: function (data, status, jqXHR) {
                let resp = data.text;
 	             let token = JSON.parse(resp).access_token;
