@@ -71,7 +71,7 @@
       </div> 
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="submit" class="btn btn-primary createPerson">Save</button>
+        <button type="button" class="btn btn-primary createPerson">Save</button>
       </div>
     </div>
   </div>
@@ -80,12 +80,12 @@
 <script>
   
   $(function() {
-    $( ".createPerson" ).on( "click", function() {
-      createItem(); 
+    $( ".createPerson" ).on( "click", function(event) {
+      createItem(event); 
     });
   });
 
-    function createItem(){// pass your data in method
+    function createItem(event){// pass your data in method
       let firstName = $('#first_name').val();
       let lastName = $('#last_name').val(); 
       let email = $('#email').val(); 
@@ -101,6 +101,8 @@
       };
 
       console.log(JSON.stringify(createObj))
+
+      event.preventDefault();
 
      $.ajax({
              type: "POST",
