@@ -20,7 +20,7 @@ router.get('/', function(req, res) {
 	  console.log(err)
 	
 		res.render('pages/home');
-    }
+    });
 }
 	else{
 		res.render('pages/login');
