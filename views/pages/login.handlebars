@@ -33,13 +33,13 @@
       let loginObj = {email, password};
      $.ajax({
              type: "POST",
-             url: "https://umbrage-interview-api.herokuapp.com/login",
+             url: "https://umbrage-bradley.herokuapp.com/login",
              data: JSON.stringify(loginObj),// now data come in this function
              contentType: "application/json; charset=utf-8",
              crossDomain: true,
              dataType: "json",
              success: function (data, status, jqXHR) {
-               window.location.href = "https://umbrage-interview-api.herokuapp.com/";
+               window.location.href = "https://umbrage-bradley.herokuapp.com/";
              },
 
              error: function (jqXHR, status) {
