@@ -33,6 +33,8 @@
       let loginObj = {username : email, 
                      password: password};
 
+                     alert(loginObj)
+
      $.ajax({
              type: "POST",
              url: "https://umbrage-interview-api.herokuapp.com/login",
