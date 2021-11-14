@@ -3,8 +3,6 @@ const express = require('express');
 const router = express.Router();
 
 const superagent = require('superagent');
-const http = require('http');
-
 
 // define the app routes
 
@@ -36,6 +34,7 @@ router.post('/login', (req, res) => {
 	  let resp = res.text;
 	  let token = JSON.parse(resp).access_token;
 	  const oneDay = 1000 * 60 * 60 * 24;
+	  res.cookie('token', token, { maxAge: oneDay, httpOnly: true });
 	  res.setHeader('Set-Cookie','visited=true; Max-Age='+oneDay+'; HttpOnly, Secure');
 	  console.log(err)
 	});
