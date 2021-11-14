@@ -29,7 +29,10 @@
       <td>{{last_name}}</td>
       <td>{{email}}</td>
       <td>{{job_title}}</td>
-      <td><a href="/view/{{id}}" title="view" ><i class="fas fa-binoculars"></i></a></td>
+      <td>
+        <a href="/view/{{id}}" title="view" ><i class="fas fa-binoculars"></i></a>
+        <a href="/delete/{{id}}" title="delete" ><i class="fas fa-trash-alt"></i></a>
+      </td>
     </tr>
     {{/each}}
   </tbody>

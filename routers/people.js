@@ -53,6 +53,25 @@ router.get('/view/:id', function(req, res) {
 	}
 });
 
+//Homepage for list of people
+router.delete('/delete/:id', function(req, res) {
+	// console.log(req.cookies['token'])
+	let token = req.cookies['token'];
+	let id = req.params.id;  
+	if(token){
+		superagent
+	.delete('https://umbrage-interview-api.herokuapp.com/people/'+id+'')
+	.auth(token, { type: 'bearer' })
+	.end((err, data) => {   
+	  console.log(err)
+	  res.redirect('/')
+	});
+	}
+	else{
+		res.render('pages/login');
+	}
+});
+
 router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
