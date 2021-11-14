@@ -50,7 +50,7 @@
      let id = $('#id').val();
      $.ajax({
              type: "DELETE",
-             url: "https://umbrage-bradley.herokuapp.com/person/"+id+"",
+             url: "https://umbrage-bradley.herokuapp.com/delete/"+id+"",
              contentType:'application/json',
              success: function (data, status, jqXHR) {
                window.location.href = "https://umbrage-bradley.herokuapp.com";
