@@ -11,14 +11,14 @@ router.get('/', function(req, res) {
 	session=req.session;
 	console.log(session)
 	if(session.token){
-		res.redirect('/')
+		res.render('pages/home');
     }else{
-		res.redirect('/login')
+		res.render('pages/login');
 	}
 });
 
 router.get('/login', function(req, res) {
-	res.redirect('/login')
+	res.render('pages/login');
 });
 
 router.post('/login', (req, res) => {
