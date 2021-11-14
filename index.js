@@ -3,9 +3,21 @@ const express = require('express');
 // require Handlebars templating engine for Express
 const exphbs  = require('express-handlebars');
 
+require('dotenv').config();
+
+var sessions = require('express-session');
+var cookieParser = require('cookie-parser');
+
 const app = express();
 
-var cookieParser = require('cookie-parser');
+const oneDay = 1000 * 60 * 60 * 24;
+app.use(sessions({
+    secret: process.env.secret,
+    saveUninitialized:true,
+    cookie: { maxAge: oneDay },
+    resave: false 
+}));
+
 app.use(cookieParser());
 
 const bodyParser = require("body-parser");

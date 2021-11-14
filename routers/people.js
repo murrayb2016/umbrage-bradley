@@ -8,13 +8,33 @@ const superagent = require('superagent');
 
 //Homepage for list of people
 router.get('/', function(req, res) {
-	console.log(req.cookies);
-	res.render('pages/home');
+	session=req.session;
+	if(session.token){
+		res.render('pages/home');
+    }else{
+		res.render('pages/login');
+	}
 });
 
 router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
 
+router.post('/login', (req, res) => {
+	// console.log(req.body)
+	session=req.session;
+	superagent
+	.post('https://umbrage-interview-api.herokuapp.com/login')
+	.send({ username: req.body.email, password: req.body.password }) // sends a JSON post body
+	.set('accept', 'json')
+	.end((err, res) => { 
+	  // Calling the end function will send the request
+	  let resp = res.text;
+	  let token = JSON.parse(resp).access_token;
+	  session.token=token;
+	  console.log(err)
+	});
+	   res.render('pages/home');  
+});
 
 module.exports = router; 

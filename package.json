@@ -17,10 +17,12 @@
     "express": "4.15.2",
     "express-bearer-token": "^2.4.0",
     "express-handlebars": "3.0.0",
+    "express-session": "^1.17.2",
     "local-storage": "^2.0.0",
     "node-localstorage": "^2.2.1",
     "promise": "^8.1.0",
     "request": "2.81.0",
+    "secret-key": "^1.5.1",
     "superagent": "^6.1.0",
     "superagent-promise": "^1.1.0"
   },
