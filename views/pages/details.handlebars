@@ -1,0 +1,26 @@
+<div class="container app-intro">
+  <h1 class="text-center">Details</h1>
+</div>
+
+<div class="container app-main">
+
+<div class="panel panel-default">
+    {{#if person.avatar}}
+        <img src="{{person.avatar}}" alt="{{person.first_name}} - {{person.last_name}}" width="100" height="100">
+        {{else}}
+        &nbsp;
+        {{/if}}
+    <div class="panel-body">
+      <label>First Name: </label>{{person.first_name}}
+      <label>Last Name: </label>{{person.last_name}}
+      <label>Email: </label>{{person.email}}
+      <label>Job Title: </label>{{person.job_title}}
+      <label>Comments:</label>
+      {{#each comments}}
+        {{comment}}
+      {{/each}}
+    </div>
+  </div>
+</div>
+
+</div>
