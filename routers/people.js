@@ -54,7 +54,7 @@ router.get('/view/:id', function(req, res) {
 });
 
 //Homepage for list of people
-router.get('/delete/:id', function(req, res) {
+router.delete('/delete/:id', function(req, res) {
 	// console.log(req.cookies['token'])
 	let token = req.cookies['token'];
 	let id = req.params.id;  
@@ -64,7 +64,7 @@ router.get('/delete/:id', function(req, res) {
 	.auth(token, { type: 'bearer' })
 	.end((err, data) => {   
 	  console.log(err)
-	  res.redirect('/')
+	  res.render('pages/home');
 	});
 	}
 	else{

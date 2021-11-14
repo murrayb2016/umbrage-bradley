@@ -31,7 +31,7 @@
       <td>{{job_title}}</td>
       <td>
         <a href="/view/{{id}}" title="view" ><i class="fas fa-binoculars"></i></a>
-        <a href="/delete/{{id}}" title="delete" ><i class="fas fa-trash-alt"></i></a>
+        <a onclick="deleteItem({{id}});" title="delete" ><i class="fas fa-trash-alt"></i></a>
       </td>
     </tr>
     {{/each}}
@@ -39,3 +39,26 @@
 </table>
 
 </div>
+
+<script>
+  
+  $(function() {
+    
+  });
+
+  function deleteItem(id){// pass your data in method
+     $.ajax({
+             type: "DELETE",
+             url: "https://umbrage-interview-api.herokuapp.com/person/"+id,
+             success: function (data, status, jqXHR) {
+               window.location.href = "https://umbrage-bradley.herokuapp.com";
+             },
+
+             error: function (jqXHR, status) {
+                 // error handler
+                 console.log(jqXHR);
+                 alert('fail' + status.code);
+             }
+          });
+    }
+</script>
