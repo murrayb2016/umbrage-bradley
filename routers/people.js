@@ -8,10 +8,21 @@ const superagent = require('superagent');
 
 //Homepage for list of people
 router.get('/', function(req, res) {
-	console.log(req.cookies['token'])
-	if(req.cookies['token']){
+	// console.log(req.cookies['token'])
+	let token = req.cookies['token']; 
+	if(token){
+		superagent
+	.get('https://umbrage-interview-api.herokuapp.com/people')
+	.set('accept', 'json')
+	.auth(token, { type: 'bearer' })
+	.end((err, res) => { 
+	  console.log(res)
+	  console.log(err)
+	
 		res.render('pages/home');
-    }else{
+    }
+}
+	else{
 		res.render('pages/login');
 	}
 });
