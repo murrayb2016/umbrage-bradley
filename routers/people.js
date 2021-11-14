@@ -28,6 +28,32 @@ router.get('/', function(req, res) {
 	}
 });
 
+//Homepage for list of people
+router.get('/people/:id', function(req, res) {
+	// console.log(req.cookies['token'])
+	let token = req.cookies['token'];
+	let id = req.params.id;  
+	let person = new Object(); 
+	let comments = new Array(); 
+	if(token){
+		superagent
+	.get('https://umbrage-interview-api.herokuapp.com/people'+id)
+	.auth(token, { type: 'bearer' })
+	.end((err, data) => { 
+	//   console.log(res.text.people)
+	  person = JSON.parse(data.text).people; 
+	  comments = JSON.parse(data.text).people.comments; 
+	  console.log(person);
+	  console.log(comments);  
+	  console.log(err)
+	  res.render('pages/home', {person,comments});
+	});
+	}
+	else{
+		res.render('pages/login');
+	}
+});
+
 router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
