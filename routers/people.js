@@ -37,7 +37,7 @@ router.get('/view/:id', function(req, res) {
 	let comments = new Array(); 
 	if(token){
 		superagent
-	.get('https://umbrage-interview-api.herokuapp.com/people'+id)
+	.get('https://umbrage-interview-api.herokuapp.com/people/'+id+'')
 	.auth(token, { type: 'bearer' })
 	.end((err, data) => {  
 	//   console.log(res.text.people)
