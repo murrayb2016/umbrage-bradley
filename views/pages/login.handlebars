@@ -34,10 +34,8 @@
      $.ajax({
              type: "POST",
              url: "https://umbrage-bradley.herokuapp.com/login",
-             data: loginObj,// now data come in this function
-             contentType: "application/json; charset=utf-8",
-             crossDomain: true,
-             dataType: "json",
+             data: JSON.stringify(loginObj),// now data come in this function
+             contentType: "application/json",
              success: function (data, status, jqXHR) {
                window.location.href = "https://umbrage-bradley.herokuapp.com";
              },
