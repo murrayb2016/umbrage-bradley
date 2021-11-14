@@ -19,7 +19,11 @@
     {{#each peoples}}
     <tr>
       <td></td>
-      <td><img src="{{avatar}}" alt="{{first_name}} - {{last_name}}" width="50" height="50"></td>
+      <td>
+        {{#if avatar}}
+        <img src="{{avatar}}" alt="{{first_name}} - {{last_name}}" width="50" height="50">
+        {{/if}}
+      </td>
       <td>{{first_name}}</td>
       <td>{{last_name}}</td>
       <td>{{email}}</td>
