@@ -20,10 +20,6 @@ app.use(sessions({
     resave: false 
 }));
 
-// parsing the incoming data
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-
 //serving public file
 app.use(express.static(__dirname));
 

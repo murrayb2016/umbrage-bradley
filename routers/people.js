@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
 	if(session.token){
 		res.render('pages/home');
     }else{
-		res.render('pages/login');
+		res.render('pages/login',{root:__dirname});
 	}
 });
 
