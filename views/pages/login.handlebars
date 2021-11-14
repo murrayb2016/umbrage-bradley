@@ -30,7 +30,9 @@
   function login(){// pass your data in method
       let email = $('#email').val();
       let password = $('password').val(); 
-      let loginObj = {email, password};
+      let loginObj = {'email' : email, 
+                     'password': password};
+
      $.ajax({
              type: "POST",
              url: "https://umbrage-bradley.herokuapp.com/login",
