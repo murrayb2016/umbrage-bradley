@@ -40,7 +40,7 @@ console.log(loginObj)
              data: JSON.stringify(loginObj),// now data come in this function
              contentType: "application/json",
              success: function (data, status, jqXHR) {
-               console.log(data)
+               let token = data.access_token;
               const oneDay = 1000 * 60 * 60 * 24;
                document.cookie = "token="+token+"; max-age="+oneDay+";";
                window.location.href = "https://umbrage-bradley.herokuapp.com";
