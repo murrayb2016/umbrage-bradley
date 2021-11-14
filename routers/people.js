@@ -39,7 +39,7 @@ router.get('/people/:id', function(req, res) {
 		superagent
 	.get('https://umbrage-interview-api.herokuapp.com/people'+id)
 	.auth(token, { type: 'bearer' })
-	.end((err, data) => { 
+	.end((err, data) => {  
 	//   console.log(res.text.people)
 	  person = JSON.parse(data.text).people; 
 	  comments = JSON.parse(data.text).people.comments; 
