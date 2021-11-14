@@ -13,7 +13,7 @@ router.get('/', function(req, res) {
 	if(token){
 		superagent
 	.get('https://umbrage-interview-api.herokuapp.com/people')
-	.auth('Authorization',token, { type: 'bearer' })
+	.auth(token, { type: 'bearer' })
 	.end((err, res) => { 
 	  console.log(res)
 	  console.log(err)
