@@ -10,8 +10,7 @@ const superagent = require('superagent');
 router.get('/', function(req, res) {
 	session=req.session;
 	console.log(session)
-	var cookies = parseCookies(req);
-	console.log(cookies)
+	console.log(req.cookies['token'])
 	if(session.token){
 		res.render('pages/home');
     }else{
