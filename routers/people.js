@@ -10,12 +10,15 @@ const superagent = require('superagent');
 router.get('/', function(req, res) {
 	// console.log(req.cookies['token'])
 	let token = req.cookies['token']; 
+	let peoples = new Array(); 
 	if(token){
 		superagent
 	.get('https://umbrage-interview-api.herokuapp.com/people')
 	.auth(token, { type: 'bearer' })
 	.end((err, res) => { 
-	  console.log(res)
+	//   console.log(res.text.people)
+	  peoples = JSON.parse(res.text.people); 
+	  console.log(peoples); 
 	  console.log(err)
 	});
 	res.render('pages/home');
