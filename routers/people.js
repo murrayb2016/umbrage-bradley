@@ -17,10 +17,9 @@ router.get('/', function(req, res) {
 	.end((err, res) => { 
 	  console.log(res)
 	  console.log(err)
-	
-		res.render('pages/home');
-    });
-}
+	});
+	res.render('pages/home');
+	}
 	else{
 		res.render('pages/login');
 	}
