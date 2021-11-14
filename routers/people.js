@@ -80,7 +80,7 @@ router.post('/people', function(req, res) {
 		superagent
 	.post('https://umbrage-interview-api.herokuapp.com/people') //API is not accepting body but randomly assigning values
 	.auth(token, { type: 'bearer' })
-	.send({ first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, job_title: req.body.job_title, avatar: avatar}) // sends a JSON post body
+	.send({ first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, job_title: req.body.job_title, avatar: req.body.avatar}) // sends a JSON post body
 	.set('accept', 'json')
 	.end((err, data) => {   
 	  console.log(err)
