@@ -40,7 +40,6 @@ router.get('/view/:id', function(req, res) {
 	.get('https://umbrage-interview-api.herokuapp.com/people/'+id+'')
 	.auth(token, { type: 'bearer' })
 	.end((err, data) => {  
-	  console.log(res.text.people)
 	  person = JSON.parse(data.text).people; 
 	  console.log(person);
 	  comments = person.comments; 
