@@ -10,7 +10,7 @@ var cookieParser = require('cookie-parser');
 
 const app = express();
 
-let secretySecret = process.env.SECRET_ACCESS; 
+let secretySecret = process.env.SECRET_ACCESS;  
 console.log(secretySecret)
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(sessions({
