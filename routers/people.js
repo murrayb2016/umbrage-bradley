@@ -9,10 +9,11 @@ const superagent = require('superagent');
 //Homepage for list of people
 router.get('/', function(req, res) {
 	session=req.session;
+	console.log(session)
 	if(session.token){
 		res.render('pages/home');
     }else{
-		res.render('pages/login',{root:__dirname});
+		res.render('pages/login');
 	}
 });
 
