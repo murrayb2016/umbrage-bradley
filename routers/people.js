@@ -72,6 +72,25 @@ router.delete('/delete/:id', function(req, res) {
 	}
 });
 
+//Homepage for list of people
+router.post('/people', function(req, res) {
+	// console.log(req.cookies['token'])
+	let token = req.cookies['token'];
+	if(token){
+		superagent
+	.post('https://umbrage-interview-api.herokuapp.com/person')
+	.send({ first_name: req.body.first_name, last_name: req.body.last_name, email: req.body.email, job_title: req.body.job_title}) // sends a JSON post body
+	.set('accept', 'json')
+	.end((err, res) => {   
+	  console.log(err)
+	  res.render('pages/home');
+	});
+	}
+	else{
+		res.render('pages/login');
+	}
+});
+
 router.get('/login', function(req, res) {
 	res.render('pages/login');
 });

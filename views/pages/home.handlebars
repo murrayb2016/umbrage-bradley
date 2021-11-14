@@ -50,7 +50,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Create a Person</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -67,7 +67,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary createPerson">Save changes</button>
+        <button type="button" class="btn btn-primary createPerson">Save</button>
       </div>
     </div>
   </div>
@@ -76,8 +76,42 @@
 <script>
   
   $(function() {
-   
+    $( ".createPerson" ).on( "click", function() {
+      createItem(); 
+    });
   });
+
+    function createItem(){// pass your data in method
+      let firstName = $('#first_name').val();
+      let lastName = $('#last_name').val(); 
+      let email = $('#email').val(); 
+      let jobTitle = $('#job_title').val(); 
+
+      let createObj = {
+        first_name: firstName, 
+        last_name: lastName, 
+        email: email, 
+        job_title: jobTitle
+      };
+
+console.log(loginObj)
+     $.ajax({
+             type: "POST",
+             url: "https://umbrage-bradley.herokuapp.com/people",
+             data: JSON.stringify(createObj),// now data come in this function
+             contentType: "application/json",
+             success: function (data, status, jqXHR) {
+               window.location.href = "https://umbrage-bradley.herokuapp.com";
+             },
+
+             error: function (jqXHR, status) {
+                 // error handler
+                 console.log(jqXHR);
+                 alert('fail' + status.code);
+             }
+          });
+    }
+
 
   function deleteItem(id){// pass your data in method
      $.ajax({
