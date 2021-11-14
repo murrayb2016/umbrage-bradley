@@ -37,7 +37,7 @@ console.log(loginObj)
      $.ajax({
              type: "POST",
              url: "https://umbrage-interview-api.herokuapp.com/login",
-             data: loginObj,// now data come in this function
+             data: JSON.stringify(loginObj),// now data come in this function
              contentType: "application/json",
              success: function (data, status, jqXHR) {
                let resp = data.text;
