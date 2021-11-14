@@ -12,7 +12,7 @@ const app = express();
 
 const oneDay = 1000 * 60 * 60 * 24;
 app.use(sessions({
-    secret: process.env.secret,
+    secret: process.env.SECRET,
     saveUninitialized:true,
     cookie: { maxAge: oneDay },
     resave: false 
