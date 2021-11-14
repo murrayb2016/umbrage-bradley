@@ -41,10 +41,11 @@ router.get('/view/:id', function(req, res) {
 	.auth(token, { type: 'bearer' })
 	.end((err, data) => {  
 	//   console.log(res.text.people)
-	  person = data.text.people; 
-	  console.log(person);
-	  comments = person.comments; 
-	  console.log(comments);  
+	//   person = data.text.people; 
+	//   console.log(person);
+	//   comments = person.comments; 
+	//   console.log(comments); 
+	console.log(data) 
 	  console.log(err)
 	  res.render('pages/home', {person,comments});
 	});
