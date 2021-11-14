@@ -65,10 +65,10 @@
         <label>Job Title:<span style="color: red;">*</span></label>
         <input type="text" class="form-control job_title" id="job_title" name="job_title" required /><br/>
         <label>Avatar:</label> 
-        <input type="url" pattern="http(s?)(:\/\/)((www.)?)([a-zA-z0-9\-_]+)(.com)" class="form-control avatar" id="avatar" name="avatar" />
-        <small id="emailHelp" class="form-text text-muted">Must be a valid url</small>
+        <input type="text" class="form-control avatar" id="avatar" name="avatar" />
+        <small id="emailHelp" class="form-text text-muted">Must be a valid email adress</small>
         <br/>
-      </div> 
+      </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
         <button type="button" class="btn btn-primary createPerson">Save</button>
@@ -80,17 +80,19 @@
 <script>
   
   $(function() {
-    $( ".createPerson" ).on( "click", function(event) {
-      createItem(event); 
+    $( ".createPerson" ).on( "click", function() {
+      createItem(); 
     });
   });
 
-    function createItem(event){// pass your data in method
+    function createItem(){// pass your data in method
       let firstName = $('#first_name').val();
       let lastName = $('#last_name').val(); 
       let email = $('#email').val(); 
       let jobTitle = $('#job_title').val(); 
       let avatar = $('#avatar').val(); 
+
+      if(firstName && lastName && validateEmail(email) && jobTitle && isValidURL(avatar)){
 
       let createObj = {
         first_name: firstName, 
@@ -101,8 +103,6 @@
       };
 
       console.log(JSON.stringify(createObj))
-
-      event.preventDefault();
 
      $.ajax({
              type: "POST",
@@ -119,6 +119,10 @@
                  alert('fail' + status.code);
              }
           });
+      }
+      else{
+        alert('Please fill in the form per requirements.')
+      }
     }
 
 
@@ -138,4 +142,15 @@
              }
           });
     }
+
+    function validateEmail(email) 
+    {
+        var re = /\S+@\S+\.\S+/;
+        return re.test(email);
+    }
+
+    function isValidURL(string) {
+  var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
+  return (res !== null)
+};
 </script>
