@@ -17,10 +17,10 @@ router.get('/', function(req, res) {
 	.auth(token, { type: 'bearer' })
 	.end((err, res) => { 
 	//   console.log(res.text.people)
-	  peoples = [...JSON.parse(res.text).people]; 
+	  peoples = JSON.parse(res.text).people; 
+	  console.log(peoples); 
 	  console.log(err)
 	});
-	console.log(peoples); 
 	res.render('pages/home', {peoples});
 	}
 	else{
