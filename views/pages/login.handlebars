@@ -3,9 +3,8 @@
 </div>
 
 <div class="container app-main">
-  <div class="card">
-    <div class="card-body">
-<form method="post">
+  <div class="panel panel-default">
+<form method="post"> <!--login form-->
   <div class="form-group">
     <label for="email">Email address<span style="color: red;">*</span></label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Enter email" required>
@@ -19,7 +18,6 @@
 </form>
 </div>
 </div>
-</div>
 
 <script>
   
@@ -27,7 +25,7 @@
     
   });
 
-  function login(){// pass your data in method
+  function login(){// call login api from form input
       let email = $('#email').val();
       let password = $('#password').val(); 
       let loginObj = {username : email, 

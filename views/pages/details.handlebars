@@ -10,18 +10,18 @@
 <div class="container app-main">
 
 <div class="panel panel-default" style="background-color: lightgrey;">
-    {{#if person.avatar}}
+    {{#if person.avatar}} <!--Check if there is a icon-->
         <img src="{{person.avatar}}" alt="{{person.first_name}} - {{person.last_name}}" width="100" height="100">
         {{else}}
         &nbsp;
         {{/if}}
     <div class="panel-body">
-      <label>First Name: </label>{{person.first_name}}<br/>
+      <label>First Name: </label>{{person.first_name}}<br/> <!--metadata output-->
       <label>Last Name: </label>{{person.last_name}}<br/>
       <label>Email: </label>{{person.email}}<br/>
       <label>Job Title: </label>{{person.job_title}}<br/>
       <label>Comments:</label><br/>
-      {{#each comments}}
+      {{#each comments}} <!--repeat over comments-->
         {{comment}}
         <hr/>
       {{/each}}

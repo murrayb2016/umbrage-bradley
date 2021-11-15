@@ -5,12 +5,12 @@
 </div>
 
 <div class="container app-main">
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-primary " data-toggle="modal" data-target="#exampleModal"> <!--Open create modal-->
 Create Person
 </button>
-<table class="table table-hover">
+<table class="table table-hover"> <!--Output peoples-->
   <thead>
-    <tr>
+    <tr> 
       <th scope="col">&nbsp;</th> <!--Avatars-->
       <th scope="col">First Name</th>
       <th scope="col">Last Name</th>
@@ -20,7 +20,7 @@ Create Person
     </tr>
   </thead>
   <tbody>
-    {{#each peoples}}
+    {{#each peoples}} <!--repeat over all people-->
     <tr>
       <td>
         {{#if avatar}}
@@ -34,8 +34,8 @@ Create Person
       <td>{{email}}</td>
       <td>{{job_title}}</td>
       <td>
-        <a href="/view/{{id}}" title="view" ><i class="fas fa-binoculars"></i></a>
-        <a href="javascript:void(0);" onclick="deleteItem(&quot;{{id}}&quot;)" title="delete" ><i class="fas fa-trash-alt"></i></a>
+        <a href="/view/{{id}}" title="view" ><i class="fas fa-binoculars"></i></a> <!--init detail view-->
+        <a href="javascript:void(0);" onclick="deleteItem(&quot;{{id}}&quot;)" title="delete" ><i class="fas fa-trash-alt"></i></a> <!--delete person-->
       </td>
     </tr>
     {{/each}}
@@ -45,7 +45,7 @@ Create Person
 </div>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> <!--Person create modal-->
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -54,7 +54,7 @@ Create Person
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body"> <!--person form-->
         <label>First Name:<span style="color: red;">*</span></label>
         <input type="text" class="form-control first_name" id="first_name" name="first_name" required /><br/>
         <label>Last Name:<span style="color: red;">*</span></label>
@@ -84,7 +84,7 @@ Create Person
     });
   });
 
-    function createItem(){// pass your data in method
+    function createItem(){// Create person and send to server for creation via api 
       let firstName = $('#first_name').val();
       let lastName = $('#last_name').val(); 
       let email = $('#email').val(); 
@@ -125,7 +125,7 @@ Create Person
     }
 
 
-  function deleteItem(id){// pass your data in method
+  function deleteItem(id){// Delete person via delete api 
      $.ajax({
              type: "DELETE",
              url: "https://umbrage-bradley.herokuapp.com/delete/"+id+"",
@@ -142,13 +142,13 @@ Create Person
           });
     }
 
-    function validateEmail(email) 
+    function validateEmail(email) //valiate email ^^
     {
         var re = /\S+@\S+\.\S+/;
         return re.test(email);
     }
 
-    function isValidURL(string) {
+    function isValidURL(string) { //valiate url ^^
   var res = string.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/g);
   return (res !== null)
 };
