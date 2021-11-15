@@ -28,7 +28,7 @@ router.get('/', function(req, res) {
 	}
 });
 
-//Homepage for list of people
+//View specific person 
 router.get('/view/:id', function(req, res) {
 	// console.log(req.cookies['token'])
 	let token = req.cookies['token'];
@@ -53,7 +53,7 @@ router.get('/view/:id', function(req, res) {
 	}
 });
 
-//Homepage for list of people
+//Delete specific person 
 router.delete('/delete/:id', function(req, res) {
 	// console.log(req.cookies['token'])
 	let token = req.cookies['token'];
@@ -72,7 +72,7 @@ router.delete('/delete/:id', function(req, res) {
 	}
 });
 
-//Homepage for list of people
+//Create person
 router.post('/people', function(req, res) {
 	// console.log(req.cookies['token'])
 	let token = req.cookies['token'];
@@ -92,10 +92,12 @@ router.post('/people', function(req, res) {
 	}
 });
 
+//Get login page
 router.get('/login', function(req, res) {
 	res.render('pages/login');
 });
 
+//Set token for 24 hours and get token 
 router.post('/login', (req, res) => {
 	// console.log(req.body)
 	session=req.session;

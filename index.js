@@ -5,26 +5,17 @@ const exphbs  = require('express-handlebars');
 
 require('dotenv').config();
 
-var sessions = require('express-session');
-var cookieParser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 
 const app = express();
-
-let secretySecret = process.env.SECRET_ACCESS; 
-// console.log(secretySecret)
-const oneDay = 1000 * 60 * 60 * 24;
-app.use(sessions({
-    secret: secretySecret,
-    saveUninitialized:true,
-    cookie: { maxAge: oneDay },
-    resave: false 
-}));
 
 //serving public file
 app.use(express.static(__dirname));
 
+//allow node to use cookies 
 app.use(cookieParser());
 
+//get body from request
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({
@@ -36,17 +27,21 @@ app.use(bodyParser.urlencoded({
 */
 app.use(bodyParser.json());
 
+//Set port for heroku
 app.set('port', (process.env.PORT || 5000));
 
+//serve static files
 app.use(express.static(__dirname + '/public'));
 
 // use Handlebars as templating engine instead of Express default one
 app.engine('handlebars', exphbs({defaultLayout: 'base'}));
 app.set('view engine', 'handlebars');
 
+//Init router(s)
 const peopleRouter = require('./routers/people');
 app.use(peopleRouter);
 
+//Start app on port
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
